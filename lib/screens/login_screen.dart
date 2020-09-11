@@ -73,21 +73,21 @@ class _LoginScreenState extends State<LoginScreen> {
               RoundedButton(
                 color: Colors.lightBlueAccent,
                 onPress: () async {
-                  /*try {*/
-                  setState(() {
-                    showSpinner = true;
-                  });
-                  final user = await _auth.signInWithEmailAndPassword(
-                      email: email, password: password);
-                  setState(() {
-                    showSpinner = false;
-                  });
-                  if (user != null) {
-                    Navigator.pushNamed(context, ChatScreen.id);
-                  }
-                  /*} catch (e) {
+                  try {
+                    setState(() {
+                      showSpinner = true;
+                    });
+                    final user = await _auth.signInWithEmailAndPassword(
+                        email: email, password: password);
+                    setState(() {
+                      showSpinner = false;
+                    });
+                    if (user != null) {
+                      Navigator.pushNamed(context, ChatScreen.id);
+                    }
+                  } catch (e) {
                     print(e);
-                  }*/
+                  }
                 },
                 buttonName: 'Log In',
               )
